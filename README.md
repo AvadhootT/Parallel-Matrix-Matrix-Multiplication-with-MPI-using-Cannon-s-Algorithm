@@ -8,6 +8,9 @@
 
 2. mpicc --showme:version
 
+There are chances of getting an error if your system has anaconda installed.So run the below command line and then try to install the MPI
+1. deactivate conda
+
 Minimum Hardware Requirements:
 1. RAM = 4GB
 2. HDD = 10GB
@@ -31,8 +34,11 @@ The message-passing interface (MPI) is a standardized means of exchanging messag
 3. Create the .c file and write code provided in cannon.c
 
 ## How to compile and run the cannon.c file
+_If anaconda is installed, then deactivate the enviroment by **conda deactivate**, then only run and compile the file._
 1. mpicc -o filename filename.c
 2. mpirun -np 4 ./filename
+3. If 2. command is giving error, then run the below command
+4. mpirun --oversubscribe -np 16 ./filename -quiet
 
 
 ## References:
